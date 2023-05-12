@@ -1,4 +1,4 @@
-﻿namespace BethanysPieShop.Models
+﻿namespace SistemasWeb01.Models
 {
     public class Category
     {
