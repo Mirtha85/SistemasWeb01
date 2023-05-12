@@ -14,7 +14,7 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IPieRepository, PieRepository>();
 
 builder.Services.AddDbContext<BethesdaPieShopDbContext>(options => {
-    options.UseSqlServer(
+    options.UseSqlite(
         builder.Configuration["ConnectionStrings:BethesdaPieShopDbContextConnection"]);
 });
 
