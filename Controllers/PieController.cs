@@ -18,7 +18,7 @@ namespace SistemasWeb01.Controllers
         {
             //ViewBag.CurrentCategory = "Cheese cakes";
             //return View(_pieRepository.AllPies);
-            PieListViewModel pieListViewModel = new PieListViewModel(_pieRepository.AllPies, "Cheese cakes");
+            PieListViewModel pieListViewModel = new PieListViewModel(_pieRepository.AllPies, "Cheese cakes");// importan add this pieListViewModel
             return View(pieListViewModel);
         }
 

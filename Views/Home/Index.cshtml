@@ -1,11 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-<!--Block element-->
-
-<h1 title="My Hello world Title">Hello World! Testing HTML</h1>
+﻿@model HomeViewModel
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    Created by Mirtha Jimenez and improved by Wilfredo, Brayan's installation didn't work
+    <img src="Images/bethanys-pie-shop-logomark.png" class="logo-mark mx-auto" />
+    <h1>Pies of the week</h1>
+    <h5>Enjoy a weekly selection of our favorite pies</h5>
+
+    <div class="row pies-of-the-week">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var pie in Model.PiesOfTheWeek)
+            {
+                    <partial name="_PieCard" model="pie" />
+            }
+        </div>
+
+    </div>
 </div>
