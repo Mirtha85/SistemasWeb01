@@ -1,7 +1,6 @@
 ﻿@model PieListViewModel
-<h5 class="text-nowrap">
-    @Model.CurrentCategory
-</h5>
+<h1>@Model.CurrentCategory</h1>
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
 
     @foreach (var pie in Model.Pies)
