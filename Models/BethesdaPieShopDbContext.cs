@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 namespace SistemasWeb01.Models
 {
-    public class BethesdaPieShopDbContext : DbContext
+    public class BethesdaPieShopDbContext :IdentityDbContext
     {
         public BethesdaPieShopDbContext(DbContextOptions<BethesdaPieShopDbContext> options) : base(options)
         {
