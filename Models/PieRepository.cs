@@ -34,7 +34,9 @@ namespace SistemasWeb01.Models
 
         public IEnumerable<Pie> SearchPies(string searchQuery)
         {
-            throw new NotImplementedException();
+            return _bethesdaPieShopDbContext.Pies.Where(p => p.Name.Contains(searchQuery));
         }
+
+
     }
 }

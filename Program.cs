@@ -2,12 +2,18 @@ using Microsoft.EntityFrameworkCore;
 using SistemasWeb01;
 using SistemasWeb01.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BethesdaPieShopDbContextConnection") ?? throw new InvalidOperationException("Connection string 'BethesdaPieShopDbContextConnection' not found.");
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+//Add ignoring infinitive cycles for models objects serialize
+builder.Services.AddControllersWithViews().AddJsonOptions(options => {
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
+
+
 
 //builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 //builder.Services.AddScoped<IPieRepository, MockPieRepository>();
